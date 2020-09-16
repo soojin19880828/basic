@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane styleClass="faceRecognition_pane" prefHeight="128.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.FaceRecognitionController">
+   <children>
+       <ImageView fitHeight="652.0" fitWidth="1100.0" layoutX="418.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../images/center_background.png" />
+           </image>
+       </ImageView>
+      <Label layoutX="873.0" layoutY="133.0" text="人脸识别" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font></Label>
+       <ImageView fitHeight="439.0" fitWidth="469.0" layoutX="730.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../images/face_background.png" />
+           </image>
+       </ImageView>
+      <HBox fx:id="camera" layoutX="812.0" layoutY="255.0" prefHeight="295.0" prefWidth="310.0" />
+      <Label fx:id="pointMessage" layoutX="824.0" layoutY="613.0" prefHeight="35.0" prefWidth="271.0" text="请看向摄像头眨眨眼睛">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="1222.0" layoutY="678.0" prefHeight="33.0" prefWidth="128.0" text="验证结果：">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</Label>
+		<Label fx:id="faceResult" layoutX="1354.0" layoutY="663.0" prefHeight="61.0" prefWidth="178.0" text="" textFill="RED">
+			<font>
+				<Font size="30.0" />
+			</font>
+		</Label>
+   </children>
+</AnchorPane>

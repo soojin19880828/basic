@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<HBox styleClass="head_pane" fx:id="headHbox" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.HeadPaneController">
+	<children>
+		<ImageView onMouseClicked="#returnHome" pickOnBounds="true" preserveRatio="true">
+			<image >
+				<Image url="@../images/return_home.png" />
+			</image>
+		</ImageView>
+		<VBox style ="-fx-translate-x:610.0px; -fx-translate-y:10.0px">
+			<HBox>
+				<Text styleClass="device_name">不动产自助受理终端</Text>
+			</HBox>
+			<HBox>
+				<Text styleClass="device_englishName"> REAL ESTATE REGISTRATION SYSTEM SELF SERVICE</Text>
+			</HBox>
+		</VBox>
+		<HBox styleClass="date_time" fx:id="dateTime"></HBox>
+	</children>
+</HBox>
+

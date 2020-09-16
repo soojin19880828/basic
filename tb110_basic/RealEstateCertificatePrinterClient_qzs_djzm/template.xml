@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE template [
+	<!ELEMENT Template (Default,Element+)>
+	<!ELEMENT Default (FontFamily,FontSize,MaxWidth,FontWeight)>
+	<!ELEMENT Element (Key,X,Y,FontFamily?,FontSize?,MaxWidth?,FontWeight?)>
+	<!ELEMENT Key (#PCDATA)>
+	<!ELEMENT X (#PCDATA)>
+	<!ELEMENT Y (#PCDATA)>
+	<!ELEMENT FontFamily (#PCDATA)>
+	<!ELEMENT FontSize (#PCDATA)>
+	<!ELEMENT MaxWidth (#PCDATA)>
+	<!ELEMENT FontWeight (#PCDATA)>
+]>
+<Template>
+	<Default>
+		<FontFamily>SimSun</FontFamily>
+		<FontSize>0.38</FontSize>
+		<MaxWidth>1</MaxWidth>
+		<FontWeight>0</FontWeight>
+	</Default>
+	<Element>
+		<Key>cert-province</Key>
+		<X>15.8</X>
+		<Y>2.7</Y>
+	</Element>
+	<Element>
+		<Key>cert-year</Key>
+		<X>17</X>
+		<Y>2.7</Y>
+	</Element>
+	<Element>
+		<Key>cert-city</Key>
+		<X>19</X>
+		<Y>2.7</Y>
+		<MaxWidth>3</MaxWidth>
+	</Element>
+	<Element>
+		<Key>cert-number</Key>
+		<X>24.2</X>
+		<Y>2.6</Y>
+		<MaxWidth>3</MaxWidth>
+	</Element>
+	<Element>
+		<Key>busi-type</Key>
+		<X>19.8</X>
+		<Y>4</Y>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>obligee</Key>
+		<X>19.8</X>
+		<Y>4.9</Y>
+		<FontSize>0.38</FontSize>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>obligor</Key>
+		<X>19.8</X>
+		<Y>6.15</Y>
+		<FontSize>0.38</FontSize>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>located</Key>
+		<X>19.8</X>
+		<Y>7.4</Y>
+		<FontSize>0.38</FontSize>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>unit-number</Key>
+		<X>19.8</X>
+		<Y>9</Y>
+		<FontSize>0.35</FontSize>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>other-cases</Key>
+		<X>19.8</X>
+		<Y>10.1</Y>
+		<FontSize>0.38</FontSize>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>notes</Key>
+		<X>19.8</X>
+		<Y>14.5</Y>
+		<FontSize>0.38</FontSize>
+		<MaxWidth>6</MaxWidth>
+	</Element>
+	<Element>
+		<Key>year</Key>
+		<X>8.4</X>
+		<Y>13.9</Y>
+		<FontSize>0.38</FontSize>
+	</Element>
+	<Element>
+		<Key>month</Key>
+		<X>10.3</X>
+		<Y>13.9</Y>
+		<FontSize>0.38</FontSize>
+	</Element>
+	<Element>
+		<Key>day</Key>
+		<X>11.5</X>
+		<Y>13.9</Y>
+		<FontSize>0.38</FontSize>
+	</Element>
+</Template>

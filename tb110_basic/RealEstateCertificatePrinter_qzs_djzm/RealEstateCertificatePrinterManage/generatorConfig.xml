@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\software\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar" />
+	<context id="ctxFramework">
+		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/printergeneral?useUnicode=true" driverClass="com.mysql.jdbc.Driver"
+			password="root" userId="root" />
+		<javaModelGenerator targetPackage="com.thfdcsoft.framework.manage.entity"
+			targetProject="RealEstateCertificatePrinterManage/src/main/java" />
+		<sqlMapGenerator targetPackage="com.thfdcsoft.framework.manage.mapper" targetProject="RealEstateCertificatePrinterManage/src/main/java" />
+		<javaClientGenerator targetPackage="com.thfdcsoft.framework.manage.dao"
+			targetProject="RealEstateCertificatePrinterManage/src/main/java" type="XMLMAPPER" />
+		<!-- 
+		<table tableName="TERM_GROUP_INFO" />
+		<table tableName="MODULE_INFO" />
+		<table tableName="ROLE_INFO" />
+		<table tableName="AUTHORIZE_INFO" />
+		<table tableName="TERMINAL_MODEL_INFO" />
+		<table tableName="ADMI_AREA_INFO" />
+		<table tableName="USER_INFO" />
+		<table tableName="PRINT_RECORD" />
+		<table tableName="TERMINAL_INFO" />
+		<table tableName="USAGE_RECORD" />
+		<table tableName="BUSI_INFO" />
+		 -->
+		 
+		 <table tableName="HELP" />
+		<!-- <table tableName="ORG_INFO" />
+		<table tableName="ORG_AGENT_INFO" /> -->
+	</context>
+</generatorConfiguration>

@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thfdcsoft.framework.manage.dao.PrintRecordMapper">
+  <resultMap id="BaseResultMap" type="com.thfdcsoft.framework.manage.entity.PrintRecord">
+    <id column="RECORD_ID" jdbcType="VARCHAR" property="recordId" />
+    <result column="BIZ_NUMBER" jdbcType="VARCHAR" property="bizNumber" />
+    <result column="CERT_NUMBER" jdbcType="VARCHAR" property="certNumber" />
+    <result column="TRAN_STATUS_WIN" jdbcType="VARCHAR" property="tranStatusWin" />
+    <result column="TRAN_STATUS_BIZ" jdbcType="VARCHAR" property="tranStatusBiz" />
+    <result column="CERT_SCAN_PATH" jdbcType="VARCHAR" property="certScanPath" />
+    <result column="USAGE_ID" jdbcType="VARCHAR" property="usageId" />
+    <result column="PRINT_TIME" jdbcType="VARCHAR" property="printTime" />
+    <result column="SEQ_NUMBER" jdbcType="VARCHAR" property="seqNumber" />
+    <result column="TIME_BOOK" jdbcType="VARCHAR" property="timeBook" />
+    <result column="OBLIGEE" jdbcType="VARCHAR" property="obligee" />
+    <result column="OWNERSHIP" jdbcType="VARCHAR" property="ownership" />
+    <result column="LOCATED" jdbcType="VARCHAR" property="located" />
+    <result column="UNIT_NUMBER" jdbcType="VARCHAR" property="unitNumber" />
+    <result column="BUSI_TYPE" jdbcType="VARCHAR" property="busiType" />
+    <result column="NATURE_OF_RIGHT" jdbcType="VARCHAR" property="natureOfRight" />
+    <result column="USEAGE" jdbcType="VARCHAR" property="useage" />
+    <result column="COVERED_AREA" jdbcType="VARCHAR" property="coveredArea" />
+    <result column="SERVICE_LIFE" jdbcType="VARCHAR" property="serviceLife" />
+    <result column="OTHER_CASES" jdbcType="VARCHAR" property="otherCases" />
+    <result column="NOTES" jdbcType="VARCHAR" property="notes" />
+    <result column="SPLIT_CHART_PATH" jdbcType="VARCHAR" property="splitChartPath" />
+    <result column="PARCEL_MAP_PATH" jdbcType="VARCHAR" property="parcelMapPath" />
+    <result column="REFERENCE_COLUMN" jdbcType="VARCHAR" property="referenceColumn" />
+    <result column="PRINT_TYPE" jdbcType="VARCHAR" property="printType" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    RECORD_ID, BIZ_NUMBER, CERT_NUMBER, TRAN_STATUS_WIN, TRAN_STATUS_BIZ, CERT_SCAN_PATH, 
+    USAGE_ID, PRINT_TIME, SEQ_NUMBER, TIME_BOOK, OBLIGEE, OWNERSHIP, LOCATED, UNIT_NUMBER, 
+    BUSI_TYPE, NATURE_OF_RIGHT, USEAGE, COVERED_AREA, SERVICE_LIFE, OTHER_CASES, NOTES, 
+    SPLIT_CHART_PATH, PARCEL_MAP_PATH, REFERENCE_COLUMN, PRINT_TYPE
+  </sql>
+  <select id="selectByExample" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from print_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from print_record
+    where RECORD_ID = #{recordId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from print_record
+    where RECORD_ID = #{recordId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecordExample">
+    delete from print_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecord">
+    insert into print_record (RECORD_ID, BIZ_NUMBER, CERT_NUMBER, 
+      TRAN_STATUS_WIN, TRAN_STATUS_BIZ, CERT_SCAN_PATH, 
+      USAGE_ID, PRINT_TIME, SEQ_NUMBER, 
+      TIME_BOOK, OBLIGEE, OWNERSHIP, 
+      LOCATED, UNIT_NUMBER, BUSI_TYPE, 
+      NATURE_OF_RIGHT, USEAGE, COVERED_AREA, 
+      SERVICE_LIFE, OTHER_CASES, NOTES, 
+      SPLIT_CHART_PATH, PARCEL_MAP_PATH, REFERENCE_COLUMN, 
+      PRINT_TYPE)
+    values (#{recordId,jdbcType=VARCHAR}, #{bizNumber,jdbcType=VARCHAR}, #{certNumber,jdbcType=VARCHAR}, 
+      #{tranStatusWin,jdbcType=VARCHAR}, #{tranStatusBiz,jdbcType=VARCHAR}, #{certScanPath,jdbcType=VARCHAR}, 
+      #{usageId,jdbcType=VARCHAR}, #{printTime,jdbcType=VARCHAR}, #{seqNumber,jdbcType=VARCHAR}, 
+      #{timeBook,jdbcType=VARCHAR}, #{obligee,jdbcType=VARCHAR}, #{ownership,jdbcType=VARCHAR}, 
+      #{located,jdbcType=VARCHAR}, #{unitNumber,jdbcType=VARCHAR}, #{busiType,jdbcType=VARCHAR}, 
+      #{natureOfRight,jdbcType=VARCHAR}, #{useage,jdbcType=VARCHAR}, #{coveredArea,jdbcType=VARCHAR}, 
+      #{serviceLife,jdbcType=VARCHAR}, #{otherCases,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR}, 
+      #{splitChartPath,jdbcType=VARCHAR}, #{parcelMapPath,jdbcType=VARCHAR}, #{referenceColumn,jdbcType=VARCHAR}, 
+      #{printType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecord">
+    insert into print_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="recordId != null">
+        RECORD_ID,
+      </if>
+      <if test="bizNumber != null">
+        BIZ_NUMBER,
+      </if>
+      <if test="certNumber != null">
+        CERT_NUMBER,
+      </if>
+      <if test="tranStatusWin != null">
+        TRAN_STATUS_WIN,
+      </if>
+      <if test="tranStatusBiz != null">
+        TRAN_STATUS_BIZ,
+      </if>
+      <if test="certScanPath != null">
+        CERT_SCAN_PATH,
+      </if>
+      <if test="usageId != null">
+        USAGE_ID,
+      </if>
+      <if test="printTime != null">
+        PRINT_TIME,
+      </if>
+      <if test="seqNumber != null">
+        SEQ_NUMBER,
+      </if>
+      <if test="timeBook != null">
+        TIME_BOOK,
+      </if>
+      <if test="obligee != null">
+        OBLIGEE,
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP,
+      </if>
+      <if test="located != null">
+        LOCATED,
+      </if>
+      <if test="unitNumber != null">
+        UNIT_NUMBER,
+      </if>
+      <if test="busiType != null">
+        BUSI_TYPE,
+      </if>
+      <if test="natureOfRight != null">
+        NATURE_OF_RIGHT,
+      </if>
+      <if test="useage != null">
+        USEAGE,
+      </if>
+      <if test="coveredArea != null">
+        COVERED_AREA,
+      </if>
+      <if test="serviceLife != null">
+        SERVICE_LIFE,
+      </if>
+      <if test="otherCases != null">
+        OTHER_CASES,
+      </if>
+      <if test="notes != null">
+        NOTES,
+      </if>
+      <if test="splitChartPath != null">
+        SPLIT_CHART_PATH,
+      </if>
+      <if test="parcelMapPath != null">
+        PARCEL_MAP_PATH,
+      </if>
+      <if test="referenceColumn != null">
+        REFERENCE_COLUMN,
+      </if>
+      <if test="printType != null">
+        PRINT_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="recordId != null">
+        #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizNumber != null">
+        #{bizNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="certNumber != null">
+        #{certNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="tranStatusWin != null">
+        #{tranStatusWin,jdbcType=VARCHAR},
+      </if>
+      <if test="tranStatusBiz != null">
+        #{tranStatusBiz,jdbcType=VARCHAR},
+      </if>
+      <if test="certScanPath != null">
+        #{certScanPath,jdbcType=VARCHAR},
+      </if>
+      <if test="usageId != null">
+        #{usageId,jdbcType=VARCHAR},
+      </if>
+      <if test="printTime != null">
+        #{printTime,jdbcType=VARCHAR},
+      </if>
+      <if test="seqNumber != null">
+        #{seqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="timeBook != null">
+        #{timeBook,jdbcType=VARCHAR},
+      </if>
+      <if test="obligee != null">
+        #{obligee,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        #{ownership,jdbcType=VARCHAR},
+      </if>
+      <if test="located != null">
+        #{located,jdbcType=VARCHAR},
+      </if>
+      <if test="unitNumber != null">
+        #{unitNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="busiType != null">
+        #{busiType,jdbcType=VARCHAR},
+      </if>
+      <if test="natureOfRight != null">
+        #{natureOfRight,jdbcType=VARCHAR},
+      </if>
+      <if test="useage != null">
+        #{useage,jdbcType=VARCHAR},
+      </if>
+      <if test="coveredArea != null">
+        #{coveredArea,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceLife != null">
+        #{serviceLife,jdbcType=VARCHAR},
+      </if>
+      <if test="otherCases != null">
+        #{otherCases,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="splitChartPath != null">
+        #{splitChartPath,jdbcType=VARCHAR},
+      </if>
+      <if test="parcelMapPath != null">
+        #{parcelMapPath,jdbcType=VARCHAR},
+      </if>
+      <if test="referenceColumn != null">
+        #{referenceColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="printType != null">
+        #{printType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecordExample" resultType="java.lang.Long">
+    select count(*) from print_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update print_record
+    <set>
+      <if test="record.recordId != null">
+        RECORD_ID = #{record.recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bizNumber != null">
+        BIZ_NUMBER = #{record.bizNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certNumber != null">
+        CERT_NUMBER = #{record.certNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tranStatusWin != null">
+        TRAN_STATUS_WIN = #{record.tranStatusWin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tranStatusBiz != null">
+        TRAN_STATUS_BIZ = #{record.tranStatusBiz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certScanPath != null">
+        CERT_SCAN_PATH = #{record.certScanPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usageId != null">
+        USAGE_ID = #{record.usageId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.printTime != null">
+        PRINT_TIME = #{record.printTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seqNumber != null">
+        SEQ_NUMBER = #{record.seqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timeBook != null">
+        TIME_BOOK = #{record.timeBook,jdbcType=VARCHAR},
+      </if>
+      <if test="record.obligee != null">
+        OBLIGEE = #{record.obligee,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ownership != null">
+        OWNERSHIP = #{record.ownership,jdbcType=VARCHAR},
+      </if>
+      <if test="record.located != null">
+        LOCATED = #{record.located,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unitNumber != null">
+        UNIT_NUMBER = #{record.unitNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busiType != null">
+        BUSI_TYPE = #{record.busiType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.natureOfRight != null">
+        NATURE_OF_RIGHT = #{record.natureOfRight,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useage != null">
+        USEAGE = #{record.useage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coveredArea != null">
+        COVERED_AREA = #{record.coveredArea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serviceLife != null">
+        SERVICE_LIFE = #{record.serviceLife,jdbcType=VARCHAR},
+      </if>
+      <if test="record.otherCases != null">
+        OTHER_CASES = #{record.otherCases,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notes != null">
+        NOTES = #{record.notes,jdbcType=VARCHAR},
+      </if>
+      <if test="record.splitChartPath != null">
+        SPLIT_CHART_PATH = #{record.splitChartPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parcelMapPath != null">
+        PARCEL_MAP_PATH = #{record.parcelMapPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.referenceColumn != null">
+        REFERENCE_COLUMN = #{record.referenceColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.printType != null">
+        PRINT_TYPE = #{record.printType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update print_record
+    set RECORD_ID = #{record.recordId,jdbcType=VARCHAR},
+      BIZ_NUMBER = #{record.bizNumber,jdbcType=VARCHAR},
+      CERT_NUMBER = #{record.certNumber,jdbcType=VARCHAR},
+      TRAN_STATUS_WIN = #{record.tranStatusWin,jdbcType=VARCHAR},
+      TRAN_STATUS_BIZ = #{record.tranStatusBiz,jdbcType=VARCHAR},
+      CERT_SCAN_PATH = #{record.certScanPath,jdbcType=VARCHAR},
+      USAGE_ID = #{record.usageId,jdbcType=VARCHAR},
+      PRINT_TIME = #{record.printTime,jdbcType=VARCHAR},
+      SEQ_NUMBER = #{record.seqNumber,jdbcType=VARCHAR},
+      TIME_BOOK = #{record.timeBook,jdbcType=VARCHAR},
+      OBLIGEE = #{record.obligee,jdbcType=VARCHAR},
+      OWNERSHIP = #{record.ownership,jdbcType=VARCHAR},
+      LOCATED = #{record.located,jdbcType=VARCHAR},
+      UNIT_NUMBER = #{record.unitNumber,jdbcType=VARCHAR},
+      BUSI_TYPE = #{record.busiType,jdbcType=VARCHAR},
+      NATURE_OF_RIGHT = #{record.natureOfRight,jdbcType=VARCHAR},
+      USEAGE = #{record.useage,jdbcType=VARCHAR},
+      COVERED_AREA = #{record.coveredArea,jdbcType=VARCHAR},
+      SERVICE_LIFE = #{record.serviceLife,jdbcType=VARCHAR},
+      OTHER_CASES = #{record.otherCases,jdbcType=VARCHAR},
+      NOTES = #{record.notes,jdbcType=VARCHAR},
+      SPLIT_CHART_PATH = #{record.splitChartPath,jdbcType=VARCHAR},
+      PARCEL_MAP_PATH = #{record.parcelMapPath,jdbcType=VARCHAR},
+      REFERENCE_COLUMN = #{record.referenceColumn,jdbcType=VARCHAR},
+      PRINT_TYPE = #{record.printType,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecord">
+    update print_record
+    <set>
+      <if test="bizNumber != null">
+        BIZ_NUMBER = #{bizNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="certNumber != null">
+        CERT_NUMBER = #{certNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="tranStatusWin != null">
+        TRAN_STATUS_WIN = #{tranStatusWin,jdbcType=VARCHAR},
+      </if>
+      <if test="tranStatusBiz != null">
+        TRAN_STATUS_BIZ = #{tranStatusBiz,jdbcType=VARCHAR},
+      </if>
+      <if test="certScanPath != null">
+        CERT_SCAN_PATH = #{certScanPath,jdbcType=VARCHAR},
+      </if>
+      <if test="usageId != null">
+        USAGE_ID = #{usageId,jdbcType=VARCHAR},
+      </if>
+      <if test="printTime != null">
+        PRINT_TIME = #{printTime,jdbcType=VARCHAR},
+      </if>
+      <if test="seqNumber != null">
+        SEQ_NUMBER = #{seqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="timeBook != null">
+        TIME_BOOK = #{timeBook,jdbcType=VARCHAR},
+      </if>
+      <if test="obligee != null">
+        OBLIGEE = #{obligee,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP = #{ownership,jdbcType=VARCHAR},
+      </if>
+      <if test="located != null">
+        LOCATED = #{located,jdbcType=VARCHAR},
+      </if>
+      <if test="unitNumber != null">
+        UNIT_NUMBER = #{unitNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="busiType != null">
+        BUSI_TYPE = #{busiType,jdbcType=VARCHAR},
+      </if>
+      <if test="natureOfRight != null">
+        NATURE_OF_RIGHT = #{natureOfRight,jdbcType=VARCHAR},
+      </if>
+      <if test="useage != null">
+        USEAGE = #{useage,jdbcType=VARCHAR},
+      </if>
+      <if test="coveredArea != null">
+        COVERED_AREA = #{coveredArea,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceLife != null">
+        SERVICE_LIFE = #{serviceLife,jdbcType=VARCHAR},
+      </if>
+      <if test="otherCases != null">
+        OTHER_CASES = #{otherCases,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        NOTES = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="splitChartPath != null">
+        SPLIT_CHART_PATH = #{splitChartPath,jdbcType=VARCHAR},
+      </if>
+      <if test="parcelMapPath != null">
+        PARCEL_MAP_PATH = #{parcelMapPath,jdbcType=VARCHAR},
+      </if>
+      <if test="referenceColumn != null">
+        REFERENCE_COLUMN = #{referenceColumn,jdbcType=VARCHAR},
+      </if>
+      <if test="printType != null">
+        PRINT_TYPE = #{printType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where RECORD_ID = #{recordId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.thfdcsoft.framework.manage.entity.PrintRecord">
+    update print_record
+    set BIZ_NUMBER = #{bizNumber,jdbcType=VARCHAR},
+      CERT_NUMBER = #{certNumber,jdbcType=VARCHAR},
+      TRAN_STATUS_WIN = #{tranStatusWin,jdbcType=VARCHAR},
+      TRAN_STATUS_BIZ = #{tranStatusBiz,jdbcType=VARCHAR},
+      CERT_SCAN_PATH = #{certScanPath,jdbcType=VARCHAR},
+      USAGE_ID = #{usageId,jdbcType=VARCHAR},
+      PRINT_TIME = #{printTime,jdbcType=VARCHAR},
+      SEQ_NUMBER = #{seqNumber,jdbcType=VARCHAR},
+      TIME_BOOK = #{timeBook,jdbcType=VARCHAR},
+      OBLIGEE = #{obligee,jdbcType=VARCHAR},
+      OWNERSHIP = #{ownership,jdbcType=VARCHAR},
+      LOCATED = #{located,jdbcType=VARCHAR},
+      UNIT_NUMBER = #{unitNumber,jdbcType=VARCHAR},
+      BUSI_TYPE = #{busiType,jdbcType=VARCHAR},
+      NATURE_OF_RIGHT = #{natureOfRight,jdbcType=VARCHAR},
+      USEAGE = #{useage,jdbcType=VARCHAR},
+      COVERED_AREA = #{coveredArea,jdbcType=VARCHAR},
+      SERVICE_LIFE = #{serviceLife,jdbcType=VARCHAR},
+      OTHER_CASES = #{otherCases,jdbcType=VARCHAR},
+      NOTES = #{notes,jdbcType=VARCHAR},
+      SPLIT_CHART_PATH = #{splitChartPath,jdbcType=VARCHAR},
+      PARCEL_MAP_PATH = #{parcelMapPath,jdbcType=VARCHAR},
+      REFERENCE_COLUMN = #{referenceColumn,jdbcType=VARCHAR},
+      PRINT_TYPE = #{printType,jdbcType=VARCHAR}
+    where RECORD_ID = #{recordId,jdbcType=VARCHAR}
+  </update>
+
+  <sql id="Base_Column_List_Alias">
+    p.RECORD_ID, p.BIZ_NUMBER, p.CERT_NUMBER, p.TRAN_STATUS_WIN, p.TRAN_STATUS_BIZ, p.CERT_SCAN_PATH,
+    p.USAGE_ID, p.PRINT_TIME
+  </sql>
+
+  <select id="selectPrintRecordListByIdNumber" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List_Alias" />
+    from PRINT_RECORD p
+    left join USAGE_RECORD u on p.USAGE_ID = u.RECORD_ID
+    where u.USER_IDNUMBER = #{idNumber,jdbcType=VARCHAR}
+  </select>
+
+  <!-- 通过certNumber的list来查询所有已经打印出的登记证明记录 -->
+  <select id="getDjzmRecordsByCertNums" parameterType="java.util.List" resultMap="BaseResultMap" >
+    select * from PRINT_RECORD p
+    where p.PRINT_TYPE = 'djzm' and p.CERT_NUMBER in
+    <foreach collection="list"  item="certNumList" index="index" open="(" separator="," close=")">
+      #{certNumList}
+    </foreach>
+  </select>
+
+  <!-- 通过certNumber的list来查询所有已经打印出的权证书记录 -->
+  <select id="getQzsRecordsByCertNums" parameterType="java.util.List" resultMap="BaseResultMap" >
+    select * from PRINT_RECORD p
+    where p.PRINT_TYPE = 'qzs' and p.CERT_NUMBER in
+    <foreach collection="list"  item="certNumList" index="index" open="(" separator="," close=")">
+      #{certNumList}
+    </foreach>
+  </select>
+
+  <!-- 通过certNumber的list来查询所有已经打印出的记录 -->
+  <select id="getRecordsBycetNums" parameterType="java.util.List" resultMap="BaseResultMap" >
+    select * from PRINT_RECORD p
+    where p.CERT_NUMBER in
+    <foreach collection="list"  item="certNumList" index="index" open="(" separator="," close=")">
+      #{certNumList}
+    </foreach>
+  </select>
+
+</mapper>

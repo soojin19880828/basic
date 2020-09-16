@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thfdcsoft.framework.manage.dao.UserRoleMapper">
+	<resultMap id="BaseResultMap" type="com.thfdcsoft.framework.manage.entity.UserRole">
+		<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+		<result column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+		<result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+		<result column="USER_MOBILE" jdbcType="VARCHAR" property="userMobile" />
+		<result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+		<result column="LOGIN_USERNAME" jdbcType="VARCHAR" property="loginUsername" />
+		<result column="USER_STATUS" jdbcType="VARCHAR" property="userStatus" />
+		<result column="USER_IDNUMBER" jdbcType="VARCHAR" property="userIdnumber" />
+		<result column="ROLE_NAME" jdbcType="VARCHAR" property="roleName" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		u.USER_ID, u.ROLE_ID, u.USER_NAME, u.USER_MOBILE,
+		u.USER_EMAIL, u.LOGIN_USERNAME, u.USER_STATUS, u.USER_IDNUMBER, r.ROLE_NAME
+	</sql>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from USER_INFO u
+		left join ROLE_INFO r on u.ROLE_ID = r.ROLE_ID
+	</select>
+</mapper>

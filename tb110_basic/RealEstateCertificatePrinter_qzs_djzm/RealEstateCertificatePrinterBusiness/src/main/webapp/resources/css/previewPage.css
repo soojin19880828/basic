@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/**
+    从baseStyle.css里分离出的预览页面样式
+    使用时在jsp页面link入该文件，放在baseStyle.css后，不然样式会被其覆盖    ———— by 王伟
+ */
+
+/*预览图第一页*/
+.preview_page_first {
+	width: 952px;
+	height: 680px;
+	background: url('../images/qzs_img/certificate.jpg') no-repeat;
+	background-size: cover;
+	position: absolute;
+	margin-left: 100px;
+}
+
+/*预览图第二页*/
+.preview_page_second {
+	width: 952px;
+	height: 680px;
+	background: url('../images/qzs_img/cert_second.jpg') no-repeat;
+	background-size: cover;
+	position: absolute;
+	margin-left: 100px;
+}
+
+/*省份*/
+#cert-province {
+	position: absolute;
+	left: 60px;
+	top: 22px;
+}
+
+/*年份*/
+#cert-year {
+	position: absolute;
+	left: 108px;
+	top: 22px;
+}
+
+/*城市*/
+#cert-city {
+	position: absolute;
+	left: 185px;
+	top: 22px;
+}
+
+/*证书编号*/
+#cert-number {
+	position: absolute;
+	left: 340px;
+	top: 22px;
+}
+
+/*权利人*/
+#obligee {
+	position: absolute;
+	left: 130px;
+	top: 65px;
+	width: 375px;
+}
+
+/*共有情况*/
+#co_ownershipCircumstance {
+	position: absolute;
+	left: 130px;
+	top: 102px;
+	width: 210px;
+}
+
+/*坐落*/
+#located {
+	position: absolute;
+	left: 130px;
+	top: 138px;
+	width: 290px;
+}
+
+/*不动产单元号*/
+#unitNumber {
+	position: absolute;
+	left: 130px;
+	top: 182px;
+	width: 210px;
+}
+
+/*权利类型*/
+#rightTypes {
+	position: absolute;
+	left: 130px;
+	top: 220px;
+	width: 210px;
+}
+
+/*权利性质*/
+#rightNature {
+	position: absolute;
+	left: 130px;
+	top: 260px;
+	width: 210px;
+}
+
+/*用途*/
+#application {
+	position: absolute;
+	left: 130px;
+	top: 297px;
+	width: 210px;
+}
+
+/*面积*/
+#area {
+	position: absolute;
+	left: 130px;
+	top: 337px;
+	width: 210px;
+}
+
+/*使用期限*/
+#serviceLife {
+	position: absolute;
+	left: 130px;
+	top: 379px;
+	width: 290px;
+}
+
+/*权利其他情况*/
+#other {
+	position: absolute;
+	left: 130px;
+	top: 420px;
+	width: 290px;
+}
+
+/*附记*/
+#excursus {
+	position: absolute;
+	left: 530px;
+	top: 90px;
+	width: 375px;
+}
+
+/*左边翻页*/
+#turn_left {
+	border-width: 0px;
+	position: absolute;
+	/*left: 854px;*/
+	/*top: 690px;*/
+	left: 375px;
+	top: 400px;
+	width: 50px;
+	height: 50px;
+}
+
+/**左翻页*/
+#turn_left_img {
+	border-width: 0px;
+	position: absolute;
+	left: -380px;
+	top: -100px;
+	width: 50px;
+	height: 50px;
+}
+
+/* 右翻页 */
+#turn_right_img {
+	border-width: 0px;
+	position: absolute;
+	left: 1100px;
+	top: 300px;
+	width: 50px;
+	height: 50px;
+}
+
+/*退出图片*/
+#close {
+	border-width: 0px;
+	position: absolute;
+	left: 1500px;
+	top: 55px;
+	width: 50px;
+	height: 50px;
+}
+
+.close_btn { /* 退出 */
+	border-width: 0px;
+	position: absolute;
+	left: -350px;
+	top: -100px;
+	width: 50px;
+	height: 50px;
+	background: url('../images/qzs_img/yl_tuichu.png') no-repeat;
+	background-size: cover;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="128.0" prefWidth="1712.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.AdministratorController">
+    <children>
+      
+        <ImageView fitHeight="652.0" fitWidth="1090.0" layoutX="418.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/center_background.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="873.0" layoutY="63.0" prefHeight="53.0" prefWidth="135.0" text="管理员" textFill="WHITE">
+            <font>
+                <Font size="41.0" />
+            </font>
+        </Label>
+      <BorderPane layoutX="457.0" layoutY="117.0" prefHeight="548.0" prefWidth="1002.0">
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                   <ImageView fitHeight="200.0" fitWidth="160.0" onMouseClicked="#exitButton" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../img/exit.png" />
+                       </image>
+                     <HBox.margin>
+                        <Insets left="25.0" right="35.0" />
+                     </HBox.margin>
+                   </ImageView>
+                   <ImageView fitHeight="211.0" fitWidth="160.0" onMouseClicked="#resetButton" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../img/reset.png" />
+                       </image>
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                   </ImageView>
+                   <ImageView fitHeight="211.0" fitWidth="160.0" onMouseClicked="#addPaperButton" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../img/addZM.png" />
+                       </image>
+                       <HBox.margin>
+                           <Insets right="40.0" />
+                       </HBox.margin>
+                   </ImageView>
+                  <ImageView fitHeight="211.0" fitWidth="160.0" onMouseClicked="#addCertificateButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addZS.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </ImageView>
+                   <ImageView fitHeight="211.0" fitWidth="160.0" onMouseClicked="#printerManage" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@../img/printerManage.png" />
+                       </image>
+                       <HBox.margin>
+                           <Insets right="40.0" />
+                       </HBox.margin>
+                   </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></HBox>
+         </center>
+      </BorderPane>
+
+    </children>
+</AnchorPane>

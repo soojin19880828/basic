@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+	default-lazy-init="true">
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/manage" />
+		<property name="successUrl" value="/manage" />
+		<property name="unauthorizedUrl" value="/manage" />
+		<property name="filterChainDefinitions">
+			<value>
+				/js/** = anon
+				/theme/** = anon
+				/resources/** = anon
+				/login = anon
+				/users/manageYz = anon
+				/users/zhLogin = anon
+				/users/supperlogin =anon
+				/users/decideManage =anon
+				/usage/selectByIdnumber = anon
+				/usage/usageRecordAndPrintRecordByBizNumber = anon
+				/print/selectByBizAndCert = anon
+				/help/search = anon
+				/image/** = anon
+				/client/** = anon
+				/business/** = anon
+				/*.jsp* = authc
+				/*.do* = authc
+				/*/** = authc
+			</value>
+		</property>
+	</bean>
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="cacheManager" ref="shiroEhcacheManager" />
+		<!-- sessionMode参数设置为native时，那么shrio就将用户的基本认证信息保存到缺省名称为shiro-activeSessionCache 
+			的Cache中 -->
+		<property name="sessionMode" value="native" />
+		<!--设置自定义realm -->
+		<property name="realm" ref="baseRealm" />
+	</bean>
+
+	<!-- 自定义Realm -->
+	<bean id="baseRealm" class="com.thfdcsoft.framework.manage.shiro.BaseRealm">
+		<!-- <property name="credentialsMatcher"> <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher"> 
+			<property name="hashAlgorithmName" value="MD5" /> true means hex encoded, 
+			false means base64 encoded <property name="storedCredentialsHexEncoded" value="true" 
+			/> 迭代次数 <property name="hashIterations" value="1" /> </bean> </property> -->
+	</bean>
+
+	<!--用户授权/认证信息Cache, 采用EhCache 缓存 -->
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManager" ref="ehCacheManager" />
+	</bean>
+
+	<!-- 开启基于注解的缓存配置 -->
+	<!-- <cache:annotation-driven cache-manager="ehCacheManager"/> -->
+	<!-- EhCacheManager bean -->
+	<bean id="ehCacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="shared" value="true" />
+	</bean>
+
+
+	<!--保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+
+	<!--AOP式方法级权限检查 -->
+	<!--Enable Shiro Annotations for Spring-configured beans. Only run after -->
+	<!--the lifecycleBeanProcessor has run: -->
+	<bean
+		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor">
+		<property name="proxyTargetClass" value="true" />
+	</bean>
+
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.thfdcsoft.framework.manage.dao.OrgAgentInfo4ViewMapper">
+	<resultMap id="BaseResultMap"
+		type="com.thfdcsoft.framework.manage.entity.OrgAgentInfo4View">
+		<result column="AGENT_ID" jdbcType="VARCHAR" property="agentId" />
+		<result column="ORG_ID" jdbcType="VARCHAR" property="orgId" />
+		<result column="AGENT_ID_NUMBER" jdbcType="VARCHAR"
+			property="agentIdNumber" />
+		<result column="AGENT_FULL_NAME" jdbcType="VARCHAR"
+			property="agentFullName" />
+		<result column="ORG_CODE" jdbcType="VARCHAR" property="orgCode" />
+		<result column="ORG_NAME" jdbcType="VARCHAR" property="orgName" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<if test="orgId != null and orgId != ''">
+				and a.ORG_ID = #{orgId}
+			</if>
+			<if test="agentIdNumber != null and agentIdNumber != ''">
+				and a.AGENT_ID_NUMBER like
+				concat('%',#{agentIdNumber},'%')
+			</if>
+			<if test="agentFullName != null and agentFullName != ''">
+				and a.AGENT_FULL_NAME like
+				concat('%',#{agentFullName},'%')
+			</if>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		<![CDATA[a.AGENT_ID, a.ORG_ID, a.AGENT_ID_NUMBER, a.AGENT_FULL_NAME, o.ORG_CODE, o.ORG_NAME]]>
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		<![CDATA[from ORG_AGENT_INFO a
+		left join ORG_INFO o
+		on a.ORG_ID = o.ORG_ID]]>
+		<include refid="Example_Where_Clause" />
+	</select>
+	<select id="countByExample" resultType="java.lang.Long"
+		parameterType="java.util.Map">
+		<![CDATA[select count(*)
+		from ORG_AGENT_INFO a
+		left join ORG_INFO o
+		on a.ORG_ID = o.ORG_ID]]>
+		<include refid="Example_Where_Clause" />
+	</select>
+</mapper>

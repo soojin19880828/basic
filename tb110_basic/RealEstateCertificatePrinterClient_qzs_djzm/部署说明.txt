@@ -1,0 +1,33 @@
+***************************************************部署需要注意的地方（此说明的内容主要为了证书/证明数量的修改）*******************************************************
+
+注意的地方一：
+客户端public interface Constant中的SelectType的属性必须与client.properties中的qzsTerminal、djzmTerminal属性保持一致，而且djzmTerminal与qzsTerminal属性
+需要与数据库中的TERMINAL_INFO表中的TERMINAL_ID主键属性保持一致（三者属性都必须统一）。
+
+--------------Constant中-------------------
+// 打印类型
+public interface SelectType {
+	
+	// 登记证明打印类型
+	public static final String DJZM = "TH-ZB-102-ZZDY1HJ";
+	
+	// 权证书打印类型
+	public static final String QZS = "TH-ZB-108-ZZDY1HJ";
+	
+}
+		
+		
+		
+------------------client.properties中---------------
+#登记证明模块ID
+djzmTerminal=TH-ZB-102-ZZDY1HJ
+#权证书模块ID
+qzsTerminal=TH-ZB-108-ZZDY1HJ
+
+
+注意的地方二：
+如果需要多个机器共用一个管理端系统，需要将client.properties中的djzmTerminal、qzsTerminal编号顺延，同一台机器的DEPLOY_NUMBER必须相同，不同机器的DEPLOY_NUMBER
+必须区分开（可以顺延）。
+如：djzmTerminal=TH-ZB-102-ZZDY2HJ，qzsTerminal=TH-ZB-108-ZZDY2HJ，因为djzmTerminal、qzsTerminal对应TERMINAL_INFO表中的TERMINAL_ID主键，所以不能
+重复，当修改了djzmTerminal、qzsTerminal属性，不要忘记将public interface Constant中的SelectType的属性同步修改，以及在TERMINAL_INFO表中添加相同属性
+的TERMINAL_ID信息。

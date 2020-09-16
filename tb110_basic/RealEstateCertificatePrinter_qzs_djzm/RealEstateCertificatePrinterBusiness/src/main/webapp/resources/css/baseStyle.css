@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+html, body, div {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	width: 1280px;
+	height: 808px;
+	overflow: hidden
+}
+
+.home {
+	/* 不动产权证书桌面 */
+	width: 1920px;
+	height: 957px;
+	background: url('../images/qzs_img/qzs_home.jpg') no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	overflow: hidden
+}
+/* 不动产权证书桌面提示 */
+#home-attention {
+	background: url('../images/qzs_img/center_background.png') no-repeat;
+	border-width: 0px;
+	position: absolute;
+	left: 18%;
+	top: 5%;
+	width: 1176px;
+	height: 714px;
+}
+
+.helpTitle {
+	border-width: 0px;
+	position: absolute;
+	left: 40%;
+	top: 2%;
+	height: 58px;
+	font-family: 'Microsoft YaHei';
+	font-weight: 400;
+	font-style: normal;
+	color: #FFFFFF;
+}
+
+.helpContent {
+	border-width: 0px;
+	position: absolute;
+	left: 9%;
+	top: 15%;
+	width: 1500px;
+	height: 500px;
+	font-family: 'Microsoft YaHei';
+	font-weight: 400;
+	font-style: normal;
+	color: black;
+	overflow-y: scroll;
+}
+
+.title {
+	position: absolute;
+	font-family: Microsoft YaHei;
+	font-size: 28px;
+	font-style: normal;
+	left: 46%;
+	top: 5.5%;
+	text-align: center;
+	margin: 0 auto;
+	color: #FFFFFF;
+}
+
+/**文字提示*/
+.transit-center {
+	position: absolute;
+	font-family: Microsoft YaHei;
+	font-size: 35px;
+	font-style: normal;
+	left: 35%;
+	top: 47%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* 不动产权证书桌面提示 */
+.home_center {
+	background: url('../images/qzs_img/center_background.png') no-repeat;
+	border-width: 0px;
+	position: absolute;
+	left: 20%;
+	top: 9%;
+	width: 1176px;
+	height: 714px;
+	background-size: cover;
+}
+
+/**数据结果列表样式*/
+.print_table {
+	border-collapse: separate;
+	border-spacing: 0px 15px;
+	font-family: Microsoft YaHei;
+	font-style: normal;
+	font-size: 25px;
+	text-align: center;
+	width: 932px;
+	position: absolute
+}
+/**行样式*/
+.table_tr {
+	background: url('../images/qzs_img/table_tr.png') no-repeat center;
+	background-size: 932px 94px;
+	height: 94px;
+	width: 932px;
+	left: 50px;
+	border-width: 0px;
+	border-radius: 20px;
+}
+
+/*文本超出长度用省略号显示，使用的时候要在style中设置width*/
+.overflow_ellipsis {
+	overflow: hidden; /*隐藏超出单元格的部分*/
+	white-space: nowrap; /*保证文本内容不会自动换行，如果多余的内容会在水平方向撑破单元格*/
+	text-overflow: ellipsis; /*将被隐藏的那部分用省略号代替*/
+}
+
+/*白色背景*/
+#print_preview_background {
+	border-width: 0px;
+	position: absolute;
+	left: 320px;
+	top: 40px;
+	width: 1258px;
+	height: 775px;
+	background-color: rgba(255, 255, 255, 1);
+	border: none;
+	border-radius: 10px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	left: -50px;
+	top: -50px
+}
+
+/**打印界面*/
+/**预览按钮字体*/
+.preview_text {
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+/**预览按钮*/
+.preview {
+	background: url('../images/qzs_img/preview.png') no-repeat;
+	background-size: cover;
+	height: 36px;
+	width: 37px;
+	border-width: 0px;
+}
+/**预览按钮*/
+.preview:active {
+	background: url('../images/qzs_img/preview.png') no-repeat;
+	background-size: cover;
+	height: 33px;
+	width: 33px;
+	border-width: 0px;
+}
+
+/**按钮*/
+.button {
+	background: url('../images/qzs_img/button.png') no-repeat;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 117px;
+	width: 222px;
+	border-width: 0px;
+	font-size: 35px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 117px;
+	float: left;
+	cursor: hand;
+	font-family: "Microsoft YaHei";
+	outline: none;
+}
+
+/**未打勾*/
+input[type=checkbox] {
+	background: url('../images/qzs_img/checkBox.png') no-repeat;
+	width: 36px;
+	height: 36px;
+	background-size: 36px 36px;
+	-ms-transform: scale(2); /* IE */
+	-moz-transform: scale(2); /* FireFox */
+	-o-transform: scale(2); /* Opera */
+	-webkit-appearance: none;
+	outline: none;
+}
+
+/**打勾*/
+input[type=checkbox]:checked {
+	background: url('../images/qzs_img/checkedBox.png') no-repeat;
+}

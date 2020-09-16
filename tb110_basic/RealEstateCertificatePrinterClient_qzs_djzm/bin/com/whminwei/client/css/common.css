@@ -1,0 +1,25 @@
+/*.index-bg{
+    -fx-background-image: url("../img/bg.png") no-repeat;
+    -fx-pref-width: 1920.0px;
+    -fx-pref-height: 1080.0px;
+}*/
+
+.index-bg{
+    -fx-background-image: url("../img/bg.jpg") no-repeat;
+    -fx-pref-width: 1920.0px;
+    -fx-pref-height: 1080.0px;
+}
+
+.green-text {
+    -fx-fill:rgb(0,128,0);
+}
+
+/*
+.face-hbox{
+    -fx-background-color: #c9f5ff;
+    -fx-background-image: url("../img/face_background.png") no-repeat;
+   !* -fx-alignment: center;*!
+    -fx-background-size: 100% 100%;
+    !*-fx-text-alignment: center;*!
+    !*-fx-padding: 0 0 0 50px;*!
+}*/

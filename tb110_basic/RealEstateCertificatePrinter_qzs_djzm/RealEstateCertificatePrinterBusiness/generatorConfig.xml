@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\maven\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar" />
+	<context id="ctxFramework">
+		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/printer?useUnicode=true" driverClass="com.mysql.jdbc.Driver"
+			password="root" userId="root" />
+		<javaModelGenerator targetPackage="com.thfdcsoft.framework.business.entity"
+			targetProject="RealEstatePrinterBusiness-luan/src/main/java" />
+		<sqlMapGenerator targetPackage="com.thfdcsoft.framework.business.mapper" targetProject="RealEstatePrinterBusiness-luan/src/main/java" />
+		<javaClientGenerator targetPackage="com.thfdcsoft.framework.business.dao"
+			targetProject="RealEstatePrinterBusiness-luan/src/main/java" type="XMLMAPPER" />
+		<!-- 
+		 -->
+		<!-- <table tableName="USAGE_RECORD" />
+		<table tableName="PRINT_RECORD" />
+		<table tableName="USER_INFO" />
+		<table tableName="TERMINAL_INFO" /> -->
+		
+		<table tableName="BANK_INFO" />
+		<table tableName="BANK_USER_INFO" />
+	</context>
+</generatorConfiguration>

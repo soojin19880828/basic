@@ -1,0 +1,15 @@
+/*.title-bg{
+    -fx-background-image: url("../img/title-background2.png") !important;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 1920.0px;
+    -fx-pref-height: 123.0px;
+
+}*/
+.top-Ap {
+    -fx-pref-height: 123px;
+    -fx-pref-width: 1920px;
+    -fx-font-family: "Microsoft YaHei";
+    -fx-background-color: rgba(255,255,255,0.0) ;
+    -fx-background-image: url("../img/title-background2.png") !important;
+    -fx-background-repeat: no-repeat;
+}

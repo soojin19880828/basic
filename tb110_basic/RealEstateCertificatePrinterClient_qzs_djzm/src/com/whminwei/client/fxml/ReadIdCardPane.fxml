@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane styleClass="readIdCard_pane" prefHeight="128.0" prefWidth="1712.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.ReadIdCardController">
+   <children>
+       <ImageView fitHeight="652.0" fitWidth="1090.0" layoutX="418.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../images/center_background.png"/>
+           </image>
+       </ImageView>
+      <Label layoutX="873.0" layoutY="133.0" text="身份验证" textFill="WHITE">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+
+       <ImageView fitHeight="381.0" fitWidth="474.0" layoutX="750.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../images/readIdCard.png"/>
+           </image>
+       </ImageView>
+
+   </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thfdcsoft.framework.manage.dao.UserAuthorizeMapper">
+	<resultMap id="BaseResultMap"
+		type="com.thfdcsoft.framework.manage.entity.UserAuthorize">
+		<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+		<result column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+		<result column="MODULE_ID" jdbcType="VARCHAR" property="moduleId" />
+		<result column="MODULE_NAME" jdbcType="VARCHAR" property="moduleName" />
+		<result column="MODULE_DESCRIBE" jdbcType="VARCHAR" property="moduleDescribe" />
+		<result column="MODULE_URL" jdbcType="VARCHAR" property="moduleUrl" />
+		<result column="MODULE_LEVEL" jdbcType="VARCHAR" property="moduleLevel" />
+		<result column="SUPE_MODULE_ID" jdbcType="VARCHAR" property="supeModuleId" />
+		<result column="DISPLAY_ORDER" jdbcType="VARCHAR" property="displayOrder" />
+		<result column="ICON_CSS" jdbcType="VARCHAR" property="iconCss" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		u.USER_ID, u.ROLE_ID, m.MODULE_ID, m.MODULE_NAME,
+		m.MODULE_DESCRIBE, m.MODULE_URL, m.MODULE_LEVEL, m.SUPE_MODULE_ID,
+		m.DISPLAY_ORDER, m.ICON_CSS
+	</sql>
+	<select id="selectByUserId" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from USER_INFO u
+		inner join AUTHORIZE_INFO a on u.ROLE_ID = a.ROLE_ID
+		inner join MODULE_INFO m on a.MODULE_ID = m.MODULE_ID
+		where u.USER_ID =
+		#{userId,jdbcType=VARCHAR}
+	</select>
+</mapper>

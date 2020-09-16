@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="128.0" prefWidth="1712.0" styleClass="top-Ap" stylesheets="@../css/top.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.TopController">
+   <children>
+
+       <ImageView fx:id="returnHome" fitHeight="106.0" fitWidth="200.0" layoutX="27.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true" visible="false">
+           <image>
+               <Image url="@../img/home.png" />
+           </image>
+       </ImageView>
+       <ImageView fx:id="returnBack" fitHeight="99.0" fitWidth="136.0" layoutX="150.0" layoutY="4.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" visible="false">
+           <image>
+               <Image url="@../img/return.png" />
+           </image>
+       </ImageView>
+       
+      <Label fx:id="time" layoutX="1612.0" layoutY="9.0" prefHeight="106.0" prefWidth="155.0" textFill="WHITE">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Label>
+      <Label fx:id="weekday" layoutX="1795.0" layoutY="14.0" text="星期四" textFill="WHITE">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Label fx:id="mouth" layoutX="1794.0" layoutY="67.0" text="12月12日" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="counDown" alignment="CENTER" layoutX="1355.0" layoutY="27.0" prefHeight="80.0" prefWidth="113.0" text="99s" textFill="#ff7e00">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+       <ImageView fitHeight="52.0" fitWidth="464.0" layoutX="769.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../img/title_text.png" />
+           </image>
+       </ImageView>
+       <ImageView fitHeight="20.0" fitWidth="468.0" layoutX="765.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../img/title_text_english.png" />
+           </image>
+       </ImageView>
+       <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="658.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../img/title_text_log.png" />
+           </image>
+       </ImageView>
+<!--
+      <Button fx:id="adminButton" visible="false" layoutX="563.0" layoutY="46.0" mnemonicParsing="false" onAction="#admin" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: #ffffff; -fx-opacity: 0.1;" textFill="WHITE" />
+-->
+   </children>
+</AnchorPane>

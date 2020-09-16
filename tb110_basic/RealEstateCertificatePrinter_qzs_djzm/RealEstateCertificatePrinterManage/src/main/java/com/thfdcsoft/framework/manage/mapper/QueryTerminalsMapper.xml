@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thfdcsoft.framework.manage.dao.QueryTerminalsMapper">
+	<resultMap id="BaseResultMap"
+		type="com.thfdcsoft.framework.manage.entity.QueryTerminals">
+		<result column="TERMINAL_ID" jdbcType="VARCHAR" property="terminalId" />
+		<result column="TERMINAL_MODEL" jdbcType="VARCHAR" property="terminalModel" />
+		<!-- 终端机分组暂时没有使用到，后期添加时此处须修改！！ -->
+		<result column="TERM_GROUP_ID" jdbcType="VARCHAR" property="termGroupId" />
+		<result column="ADMI_AREA_ID" jdbcType="VARCHAR" property="admiAreaId" />
+		<result column="TERM_DEPLOY_ADDR" jdbcType="VARCHAR" property="termDeployAddr" />
+		<result column="TERMINAL_STATUS" jdbcType="VARCHAR" property="terminalStatus" />
+		<result column="REMAINING_PAPER" jdbcType="VARCHAR" property="remainingPaper" />
+    	<result column="DEPLOY_NUMBER" jdbcType="VARCHAR" property="deployNumber" />  	
+    	<result column="EXTEND_FIELD" jdbcType="VARCHAR" property="extendField" />
+		<result column="TERMINAL_NAME" jdbcType="VARCHAR" property="terminalName" />
+		<result column="ADMI_AREA_NAME" jdbcType="VARCHAR" property="admiAreaName" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		t.TERMINAL_ID, t.TERMINAL_MODEL, t.TERMINAL_STATUS, t.REMAINING_PAPER, t.DEPLOY_NUMBER,t.EXTEND_FIELD,
+		m.TERMINAL_NAME, a.ADMI_AREA_NAME
+	</sql>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from TERMINAL_INFO t
+		left join TERMINAL_MODEL_INFO m on t.TERMINAL_MODEL = m.TERMINAL_MODEL
+		left join ADMI_AREA_INFO a on t.ADMI_AREA_ID = a.ADMI_AREA_ID
+	</select>
+</mapper>

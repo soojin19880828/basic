@@ -1,0 +1,1 @@
+get_sysinfo -s ./license_in.dat

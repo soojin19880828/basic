@@ -1,0 +1,384 @@
+.head-box {
+	-fx-background-image: url("../images/head.png");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 138.0px;
+}
+
+.manage-box{
+	-fx-background-image: url("../images/body.png");
+	-fx-translate-x: 252.5px;
+	-fx-translate-y: 75.0px;
+}
+
+
+.tubiao-box {
+	-fx-background-image: url("../images/tubiao.png");
+	-fx-pref-width: 73.0px;
+	-fx-pref-height: 75.0px;
+	
+}
+
+.title-box {
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 130.0px;
+	-fx-alignment: center;
+	
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 40.0px;
+	-fx-font-weight: bold;
+}
+
+
+
+.time {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 30.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #FFFFFF;
+}
+.currentTime {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 30.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #FFFFFF;
+}
+
+.notice-text {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 30.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #FFFFFF;
+}
+.device-name {
+	-fx-fill: #FFFFFF;
+	
+}
+
+.exit-box {
+	-fx-pref-width: 80.0px;
+	-fx-pref-height: 130.0px;
+	-fx-alignment: top-right;
+}
+
+.control {
+	-fx-pref-width: 50.0px;
+	-fx-pref-height: 50.0px;
+}
+
+.btn-pane {
+	-fx-background-image: url("../images/body.png");
+	-fx-pref-width: 1280.0px;
+	-fx-pref-height: 864.0px;
+}
+
+
+.replenish-pane {
+	-fx-background-image: url("../images/body.png");
+	-fx-pref-width: 1280.0px;
+	-fx-pref-height: 864.0px;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 28.0px;
+	-fx-font-weight: bold;
+}
+
+.foot-box {
+	-fx-background-image: url("../images/foot.png");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height:100.0px;
+	-fx-alignment: center;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 32.0px;
+	-fx-font-weight: bold;
+}
+
+.foot-text {
+	-fx-fill: #FFFFFF;
+}
+
+.transit-box {
+	-fx-background-image: url("../images/bg.jpg");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 842.0px;
+	-fx-alignment: center;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 40.0px;
+	-fx-font-weight: bold;
+}
+
+.transit-info {
+	-fx-fill: #333333;
+}
+
+
+.border-box {
+	-fx-background-image: url("../images/home-attention.png");
+	-fx-pref-width: 1225.0px;
+	-fx-pref-height: 670.0px;
+	-fx-translate-x: 347.5px;
+	-fx-translate-y: 75.0px;
+	-fx-background-repeat: no-repeat ;
+}
+
+
+.normal-text {
+	-fx-fill: #333333;
+}
+
+.warning-text {
+	-fx-fill: #FFA500;
+}
+
+.red-text {
+	-fx-fill: rgb(255.0, 0.0, 0.0);
+}
+
+.green-text {
+	-fx-fill: rgb(0.0, 128.0, 0.0);
+}
+
+.add-text {
+	-fx-fill: rgb(255.0, 0.0, 0.0);
+}
+
+.sub-text {
+	-fx-fill: rgb(0.0, 128.0, 0.0);
+}
+
+.count-down {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 32.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #CCCCCC;
+}
+
+.base-button {
+	-fx-pref-width: 110.0px;
+	-fx-pref-height: 50.0px;
+}
+
+.homecss {
+	-fx-font-size: 30.0px;
+	-fx-text-fill: #ffffff;
+	-fx-pref-height: 68.0px;
+	-fx-pref-width: 168.0px;
+	-fx-background-size: 168.0px 68.0px;
+	-fx-font-family:"Microsoft YaHei";
+	-fx-background-color: transparent ;
+    -fx-background-image: url("../images/button.png") ;
+}
+.homecss:pressed {
+	-fx-font-size: 30.0px;
+	-fx-text-fill: #ffffff;
+	-fx-pref-height: 60.0px;
+	-fx-pref-width: 160.0px;
+	-fx-background-size: 160.0px 60.0px;
+	-fx-font-family:"Microsoft YaHei";
+	-fx-background-color: transparent ;
+    -fx-background-image: url("../images/button.png") ;
+}
+.chk-pane {
+	-fx-alignment: top-left;
+	-fx-pref-width: 400.0px;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 28.0px;
+	-fx-font-weight: bold;
+}
+
+.hb {
+	-fx-font-size: 25.0px;
+	-fx-font-weight: bold;
+	-fx-font-family: "Microsoft YaHei";
+}
+
+.text-name{
+	-fx-fill: #FFFFFF;
+	-fx-translate-x: 440.0px;
+	-fx-translate-y: 288.0px;
+}
+
+.vb-box{
+	-fx-fill: #FFFFFF;
+	-fx-translate-x: 440.0px;
+}
+
+.lb{
+	-fx-fill: #FFFFFF;
+	-fx-font-size: 35.0px;
+	-fx-font-family: "Microsoft YaHei";
+}
+
+.pwd{
+	-fx-pref-height: 50.0px;
+	-fx-pref-width: 240.0px;
+}
+
+.message{
+	-fx-fill: #FFFFFF;
+	-fx-font-size: 35.0px;
+	-fx-font-family: "Microsoft YaHei";
+}
+
+.ts_text{
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 30.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #FFA500;
+}
+
+/*登记证明扫码页面样式 */
+.smText {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-fill: #FFFFFF;
+	-fx-font-size: 25.0px;
+	-fx-letter-spacing: 5.0px;
+}
+
+.ywh, .number{ 
+    -fx-alignment: center;
+    -fx-font-size: 35.0px
+}
+
+
+.scan-btn-pane {
+	-fx-background-image: url("../images/scan-body.png");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 850.0px;
+}
+
+.table-row-cell:empty .table-cell {  
+    -fx-border-width: 0.0px;  
+}
+
+.table-row-cell .table-cell {  
+    -fx-border-width: 0.0px;  
+}
+
+/*设置背景透明*/
+.table-view {
+	-fx-background-color: transparent;
+}
+.table-column {
+	-fx-background-color: transparent;
+}
+.table-row-cell {
+    -fx-background-color:transparent;
+}
+.table-view .column-header-background {
+	-fx-background-color:transparent;
+} 
+.table-view .filler {
+	-fx-background-color:transparent;
+}
+
+/*影藏水平滚动条*/
+.table-view > .virtual-flow > .scroll-bar:horizontal{
+	-fx-pref-width: 0.0;
+	-fx-pref-height: 0.0;
+}
+
+/**首页过度界面*/
+.init_pane {
+	-fx-background-image: url("../images/bg.jpg");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 1080.0px;
+	-fx-alignment: center;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 40.0px;
+	-fx-font-weight: bold;
+}
+
+/**提示页面中间部分*/
+.transit_pane, .readIdCard_pane, .idCardInfo_pane, .faceRecognition_pane, .adminLogin_pane{
+	-fx-background-image: url("../images/center.jpg");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 842.0px;
+	-fx-alignment: center;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 40.0px;
+	-fx-font-weight: bold;
+}
+
+/**提示页面字体*/
+.init_text, .transit_text {
+	-fx-fill: #333333;
+}
+
+/** FX页面新UI样式 */
+/**头部*/
+.head_pane {
+	-fx-background-image: url("../images/head.png");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height: 138.0px;
+}
+
+/**尾部*/
+.foot_pane {
+	-fx-background-image: url("../images/foot.png");
+	-fx-pref-width: 1920.0px;
+	-fx-pref-height:100.0px;
+}
+
+/**设备名称中文*/
+.device_name {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 50.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #ffffff;
+}
+
+/**设备名称英文*/
+.device_englishName {
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 17.0px;
+	-fx-font-weight: bold;
+	-fx-fill: #ffffff;
+}
+
+/**时间组件*/
+.date_time {
+	-fx-translate-x: 1100.0;
+	-fx-translate-y: 10.0;
+}
+
+/**倒计时*/
+.count_down {
+	-fx-translate-x: 530.0px;
+	-fx-translate-y: 25.0px;
+	-fx-font-family: "Microsoft YaHei";
+	-fx-font-size: 36.0px;
+	-fx-font-weight: bold;
+	-fx-fill: red;
+}
+
+/**时间组件*/
+.time_vbox {
+	-fx-translate-x: 165.0;
+	-fx-translate-y: 10.0;
+}
+
+/**时分组件*/
+.hourAndMinuteText {
+	-fx-font-size: 60.0px;
+	-fx-fill: #FFFFFF;
+	-fx-font-family: "Microsoft YaHei";
+}
+
+/**日期*/
+.day_text {
+	-fx-font-size: 20.0px;
+	-fx-fill: #FFFFFF;
+	-fx-font-family: "Microsoft YaHei";
+}
+/**星期*/
+.week_text {
+	-fx-font-size: 25.0px;
+	-fx-fill: #FFFFFF;
+	-fx-font-family: "Microsoft YaHei";
+}
+
+.index-bg {
+	-fx-background-image:url("../img/bg.jpg");
+	-fx-pref-width:1920.0px;
+	-fx-pref-height:1080.0px;
+}
+

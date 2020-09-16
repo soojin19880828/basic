@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd   
+            http://www.springframework.org/schema/mvc   
+            http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd   
+            http://www.springframework.org/schema/context   
+            http://www.springframework.org/schema/context/spring-context-4.3.xsd   
+            http://www.springframework.org/schema/aop   
+            http://www.springframework.org/schema/aop/spring-aop-4.3.xsd   
+            http://www.springframework.org/schema/tx   
+            http://www.springframework.org/schema/tx/spring-tx-4.3.xsd ">
+
+	<!-- BoneCP链接池配置 -->
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="idleConnectionTestPeriod" value="${bonecp.idleConnectionTestPeriod}" />
+		<property name="idleMaxAge" value="${bonecp.idleMaxAge}" />
+		<property name="poolAvailabilityThreshold" value="${bonecp.poolAvailabilityThreshold}" />
+		<property name="connectionTimeout" value="${bonecp.connectionTimeout}" />
+		<property name="maxConnectionsPerPartition" value="${bonecp.maxConnectionsPerPartition}" />
+		<property name="minConnectionsPerPartition" value="${bonecp.minConnectionsPerPartition}" />
+		<property name="partitionCount" value="${bonecp.partitionCount}" />
+		<property name="acquireIncrement" value="${bonecp.acquireIncrement}" />
+		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
+		<property name="releaseHelperThreads" value="${bonecp.releaseHelperThreads}" />
+		<property name="disableJMX" value="${bonecp.disableJMX}" />
+	</bean>
+
+	<!-- 配置mybatis -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations"
+			value="classpath*:com/thfdcsoft/**/mapper/*Mapper.xml" />
+		<property name="plugins">
+			<list>
+				<bean
+					class="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">
+					<property name="dialectClass"
+						value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 扫描Mapper.xml文件对应的Mapper接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.thfdcsoft.**.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 配置事物管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 配置基于注解的声明式事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>

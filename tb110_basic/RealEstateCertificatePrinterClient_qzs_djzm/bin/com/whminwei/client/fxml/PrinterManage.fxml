@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="128.0" prefWidth="1712.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.PrinterManageController">
+    <children>
+
+        <ImageView fitHeight="652.0" fitWidth="1090.0" layoutX="418.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/center_background.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="873.0" layoutY="63.0" text="打印机状态" textFill="WHITE">
+            <font>
+                <Font size="41.0" />
+            </font>
+        </Label>
+      <GridPane layoutX="638.0" layoutY="174.0" prefHeight="341.0" prefWidth="607.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="142.0" prefWidth="304.0" text="打印机状态：" textFill="#888888">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="126.0" prefWidth="302.0" text="打印总数量：" textFill="#888888" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="113.0" prefWidth="357.0" text="墨粉百分比：" textFill="#888888" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="status" prefHeight="114.0" prefWidth="314.0" text="就绪" textAlignment="CENTER" textFill="#55c700" GridPane.columnIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="remaining" prefHeight="196.0" prefWidth="303.0" text="100%" textAlignment="CENTER" textFill="#00b4ff" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="letter" prefHeight="134.0" prefWidth="303.0" text="222" textAlignment="CENTER" textFill="#ff9600" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </Label>
+             <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                 <image>
+                     <Image url="@../img/printerStatusLogSuccess.png" />
+                 </image>
+             </ImageView>
+             <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                 <image>
+                     <Image url="@../img/printerTotal.png" />
+                 </image>
+             </ImageView>
+             <ImageView fitHeight="38.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                 <image>
+                     <Image url="@../img/toner.png" />
+                 </image>
+             </ImageView>
+         </children>
+      </GridPane>
+        
+
+    </children>
+</AnchorPane>

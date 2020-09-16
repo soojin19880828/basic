@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane
+	fx:controller="com.thfdcsoft.estate.printer.view.pages.FaceAndIDPaneController"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	styleClass="main-box">
+	<center>
+		<HBox fx:id="mainH">
+			<padding>
+				<Insets top="170" right="0" bottom="0" left="180"></Insets>
+			</padding>
+			<GridPane hgap="10" vgap="30" styleClass="chk-pane">
+			</GridPane>
+			<HBox>
+			</HBox>
+			<GridPane hgap="10" vgap="10" styleClass="chk-pane">
+				<padding>
+					<Insets top="0" right="0" bottom="0" left="35"></Insets>
+				</padding>
+				<Text text="姓名：" styleClass="normal-text" GridPane.columnIndex="0"
+					GridPane.rowIndex="0" GridPane.columnSpan="2"></Text>
+				<Text fx:id="fullName" styleClass="normal-text" text="XXX"
+					GridPane.columnIndex="2" GridPane.rowIndex="0"></Text>
+				<Text text="性别：" styleClass="normal-text" GridPane.columnIndex="0"
+					GridPane.rowIndex="1" GridPane.columnSpan="2"></Text>
+				<Text fx:id="sex" text="X" styleClass="normal-text"
+					GridPane.columnIndex="2" GridPane.rowIndex="1"></Text>
+				<Text text="民族：" styleClass="normal-text" GridPane.columnIndex="0"
+					GridPane.rowIndex="2" GridPane.columnSpan="2"></Text>
+				<Text fx:id="nation" text="X" styleClass="normal-text"
+					GridPane.columnIndex="2" GridPane.rowIndex="2"></Text>
+				<Text text="公民身份证号码：" styleClass="normal-text"
+					GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="3"></Text>
+				<Text fx:id="idNumber" text="XXXXXXXXXXXXXXXXXX" styleClass="normal-text"
+					GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="4"></Text>
+				<ImageView fx:id="idPic" fitHeight="160" fitWidth="130"
+					GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.columnSpan="2"
+					GridPane.rowSpan="3">
+				</ImageView>
+				<Text text="验证结果：" styleClass="normal-text"
+					GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="3"></Text>
+				<Text fx:id="chkResTest" styleClass="green-text" text="0.25"
+					GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.columnSpan="1"></Text>
+			</GridPane>
+		</HBox>
+	</center>
+</BorderPane>
+

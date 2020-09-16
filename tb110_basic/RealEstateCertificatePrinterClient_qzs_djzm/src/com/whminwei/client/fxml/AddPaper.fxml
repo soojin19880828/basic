@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="128.0" prefWidth="1712.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whminwei.controller.AddPaperController">
+   <children>
+
+      <ImageView fitHeight="652.0" fitWidth="1090.0" layoutX="418.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/center_background.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="891.0" layoutY="64.0" prefHeight="53.0" prefWidth="181.0" text="证明管理" textFill="WHITE">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <BorderPane layoutX="457.0" layoutY="117.0" prefHeight="548.0" prefWidth="1002.0">
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="794.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="100.0" prefWidth="189.0" text="剩余证明数量：">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="paperNum" prefHeight="100.0" prefWidth="128.0" text="789" textFill="#ff9000">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="98.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="99.0" layoutY="62.0" onMouseClicked="#add1" prefHeight="73.0" prefWidth="121.0" text="+1" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="270.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="271.0" layoutY="61.0" onMouseClicked="#add2" prefHeight="74.0" prefWidth="122.0" text="+2" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="439.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="439.0" layoutY="61.0" onMouseClicked="#add5" prefHeight="75.0" prefWidth="122.0" text="+5" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="598.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="600.0" layoutY="61.0" onMouseClicked="#add10" prefHeight="75.0" prefWidth="121.0" text="+10" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="769.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="769.0" layoutY="61.0" onMouseClicked="#add100" prefHeight="74.0" prefWidth="125.0" text="+100" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="98.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="98.0" layoutY="222.0" onMouseClicked="#reduce1" prefHeight="75.0" prefWidth="125.0" text="-1" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="270.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="272.0" layoutY="222.0" onMouseClicked="#reduce2" prefHeight="77.0" prefWidth="120.0" text="-2" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="439.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="440.0" layoutY="222.0" onMouseClicked="#reduce5" prefHeight="76.0" prefWidth="121.0" text="-5" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="598.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="599.0" layoutY="222.0" onMouseClicked="#reduce10" prefHeight="75.0" prefWidth="122.0" text="-10" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+
+                  <ImageView fitHeight="74.0" fitWidth="124.0" layoutX="769.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addPaperButton.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="770.0" layoutY="222.0" onMouseClicked="#reduce100" prefHeight="76.0" prefWidth="123.0" text="-100" textFill="#666666">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="117.0" fitWidth="222.0" layoutX="283.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/button.png" />
+                     </image>
+                  </ImageView>
+
+                  <ImageView fitHeight="117.0" fitWidth="222.0" layoutX="512.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/button.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="298.0" layoutY="336.0" onMouseClicked="#save" prefHeight="71.0" prefWidth="193.0" text="保存" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="527.0" layoutY="335.0" onMouseClicked="#cancel" prefHeight="73.0" prefWidth="193.0" text="取消" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+
+   </children>
+</AnchorPane>
